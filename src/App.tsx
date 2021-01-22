@@ -1,11 +1,11 @@
 import styles from './App.module.css';
-import { Counter } from './counter';
+import { Itunes } from './itunes';
 
 function App() {
   return (
     <div className={styles['App']}>
       <header className={styles['App-header']}>
-        <Counter startingValue={100} />
+        <Itunes />
       </header>
     </div>
   );
