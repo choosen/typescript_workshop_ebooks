@@ -10,7 +10,7 @@ export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
   },
-  middleware [sagaMiddleware],
+  middleware: [sagaMiddleware],
 });
 
 function* rootSaga() {
@@ -21,4 +21,4 @@ sagaMiddleware.run(rootSaga);
 
 type GetStoreState<S> = S extends Store<infer State, any> ? State : unknown;
 
-export type storeState = GetStoreState<typeof store>;
+export type StoreState = GetStoreState<typeof store>;
