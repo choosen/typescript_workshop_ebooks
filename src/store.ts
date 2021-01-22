@@ -1,6 +1,6 @@
-import { StatHelpText } from "@chakra-ui/react";
-import { configureStore, Store } from "@reduxjs/toolkit";
-import { counterSlice } from "./counter/counterSlice";
+import { StatHelpText } from '@chakra-ui/react';
+import { configureStore, Store } from '@reduxjs/toolkit';
+import { counterSlice } from './counter/counterSlice';
 
 export const store = configureStore({
   reducer: {
