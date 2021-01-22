@@ -27,11 +27,11 @@ export const itunesSlice = createSlice({
     setEbooks(state, action: PayloadAction<Ebook[]>) {
       state.ebooks = action.payload;
     },
-    setLoadingOn(state, action: PayloadAction<boolean>) {
-      state.isLoading = action.payload;
+    setLoadingOn(state) {
+      state.isLoading = true;
     },
-    setLoadingOff(state, action: PayloadAction<boolean>) {
-      state.isLoading = action.payload;
+    setLoadingOff(state) {
+      state.isLoading = false;
     },
   },
 });

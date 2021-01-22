@@ -42,11 +42,11 @@ export function* onFetchEbooks(
 ) {
   console.log('fetching ebooks for', action.payload);
   try {
-    yield put(setLoadingOn(true));
+    yield put(setLoadingOn());
     const ebooks: ApiEbook[] = yield call(getEbooks, action.payload);
     yield put(setEbooks(ebooks));
-    yield put(setLoadingOff(false));
   } finally {
+    yield put(setLoadingOff());
     console.log('fetching done');
   }
 }
