@@ -21,6 +21,6 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { incCount, decCount } = counterSlice.actions;
+export const { incCount, decCount, incCountDelayed } = counterSlice.actions;
 
 export const selectCount = (storeState: storeState) => storeState.counter.count;
