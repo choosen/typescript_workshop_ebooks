@@ -5,7 +5,7 @@ function App() {
   return (
     <div className={styles['App']}>
       <header className={styles['App-header']}>
-        <Counter />
+        <Counter startingValue={100} />
       </header>
     </div>
   );

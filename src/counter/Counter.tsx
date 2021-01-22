@@ -1,8 +1,8 @@
 import { Button, Stack, Tag } from "@chakra-ui/react";
 import { useState } from "react";
 
-export function Counter() {
-  const [count, setCount] = useState(5);
+export function Counter({ startingValue } : { startingValue: number }) {
+  const [count, setCount] = useState(startingValue);
   return (
 
     <Stack direction="column">
