@@ -1,7 +1,12 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import * as yup from 'yup';
 import { PayloadActionFromCreator } from '../utils';
-import { fetchEbooks, setEbooks } from './itunesSlice';
+import {
+  fetchEbooks,
+  setEbooks,
+  setLoadingOn,
+  setLoadingOff,
+} from './itunesSlice';
 
 const ebookSchema = yup.object({
   trackId: yup.number().defined(),
@@ -37,8 +42,10 @@ export function* onFetchEbooks(
 ) {
   console.log('fetching ebooks for', action.payload);
   try {
+    yield put(setLoadingOn(true));
     const ebooks: ApiEbook[] = yield call(getEbooks, action.payload);
     yield put(setEbooks(ebooks));
+    yield put(setLoadingOff(false));
   } finally {
     console.log('fetching done');
   }
