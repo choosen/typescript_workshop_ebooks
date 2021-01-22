@@ -14,6 +14,7 @@ export const counterSlice = createSlice({
     incCount(state, action: PayloadAction<number>) {
       state.count += action.payload;
     },
+    incCountDelayed(state, action: PayloadAction<number>) {},
     decCount(state, action: PayloadAction<number>) {
       state.count -= action.payload;
     },
